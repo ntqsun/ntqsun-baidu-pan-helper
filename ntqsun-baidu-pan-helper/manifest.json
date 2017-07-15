@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Baidu Pan Helper",
+  "version": "1.0.0.0",
+  "permissions": [
+    "<all_urls>",
+    "storage"
+  ],
+  "browser_action": {
+    "default_icon": "app_icon_40.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "jquery-2.0.3.min.js",
+        "content_script_bph.js"
+      ],
+      "matches": [
+        "https://pan.baidu.com/s/*",
+        "http://pan.baidu.com/s/*",
+        "https://pan.baidu.com/share/*",
+        "http://pan.baidu.com/share/*"
+      ]
+    }
+  ]
+}
